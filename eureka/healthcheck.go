@@ -5,7 +5,7 @@ import "net/http"
 import "time"
 import  log "github.com/Sirupsen/logrus"
 import "io/ioutil"
-import "bytes"
+//import "bytes"
 
 
 // AppId comes from APP_NAME environment variable //

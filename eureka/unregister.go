@@ -4,8 +4,8 @@ import "github.com/ibrokethecloud/go-utils"
 import "net/http"
 import "time"
 import  log "github.com/Sirupsen/logrus"
-import "io/ioutil"
-import "bytes"
+//import "io/ioutil"
+//import "bytes"
 
 func UnregisterClient(registerationInfo []byte, endpoint string){
   // Call Eureka end point and register //
