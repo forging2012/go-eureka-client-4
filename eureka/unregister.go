@@ -7,7 +7,7 @@ import "os"
 import "os/signal"
 import "syscall"
 
-func UnregisterClient(registerationInfo []byte){
+func UnregisterClient(){
   // Call Eureka end point and register //
 
   endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/v2/apps/"+APP_NAME+"/"+utils.GetHostName()
