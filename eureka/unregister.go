@@ -2,11 +2,10 @@ package eureka
 
 import "github.com/ibrokethecloud/go-utils"
 import "net/http"
-import "time"
 import  log "github.com/Sirupsen/logrus"
 
 
-func UnregisterClient(registerationInfo []byte, endpoint string){
+func UnregisterClient(registerationInfo []byte){
   // Call Eureka end point and register //
 
   endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/v2/apps/"+APP_NAME+"/"+utils.GetHostName()
