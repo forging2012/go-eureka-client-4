@@ -5,10 +5,7 @@ import "net/http"
 import "time"
 import  log "github.com/Sirupsen/logrus"
 import "io/ioutil"
-import "os"
 
-var EUREKA_ENDPOINT = os.Getenv("EUREKA_ENDPOINT")
-var APP_NAME = os.Getenv("APP_NAME")
 
 // AppId comes from APP_NAME environment variable //
 
@@ -31,9 +28,7 @@ func HealthCheck(){
       body, _ := ioutil.ReadAll(resp.Body)
       log.Infof("response Body: %s", string(body))
 
-      resp.Status
-
-       time.Sleep(time.Second * 30)
+      time.Sleep(time.Second * 30)
     }
 
 
