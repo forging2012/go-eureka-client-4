@@ -5,6 +5,7 @@ import "net/http"
 import  log "github.com/Sirupsen/logrus"
 import "os"
 import "os/signal"
+import "syscall"
 
 func UnregisterClient(registerationInfo []byte){
   // Call Eureka end point and register //
