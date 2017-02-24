@@ -12,5 +12,5 @@ func main() {
   var JsonRegistrationInfo,err = json.Marshal(eureka.DefaultRegisterationInfo)
   utils.CheckError(err)
   fmt.Println(string(JsonRegistrationInfo))
-  eureka.RegisterClient(JsonRegistrationInfo)
+  eureka.RegisterClient(JsonRegistrationInfo,EUREKA_ENDPOINT)
 }
