@@ -7,6 +7,7 @@ import "encoding/json"
 import "fmt"
 
 var EUREKA_ENDPOINT = os.Getenv("EUREKA_ENDPOINT")
+var APP_NAME = os.Getenv("APP_NAME")
 
 func main() {
   var JsonRegistrationInfo,err = json.Marshal(eureka.DefaultRegisterationInfo)

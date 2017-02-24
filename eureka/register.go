@@ -7,10 +7,12 @@ import  log "github.com/Sirupsen/logrus"
 import "io/ioutil"
 import "bytes"
 
-func RegisterClient(registerationInfo []byte, endpoint string){
+func RegisterClient(registerationInfo []byte){
   // Call Eureka end point and register //
 
   resp_code := "000"
+
+  endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/v2/apps/"
 
   for resp_code != "204" {
 
