@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "github.com/ibrokethecloud/go-eureka-client"
+import "github.com/ibrokethecloud/go-eureka-client/type"
 import "github.com/ibrokethecloud/go-utils"
 import "encoding/json"
 
