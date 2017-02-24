@@ -13,5 +13,14 @@ func main() {
   var JsonRegistrationInfo,err = json.Marshal(eureka.DefaultRegisterationInfo)
   utils.CheckError(err)
   fmt.Println(string(JsonRegistrationInfo))
+
+  // Register the client
   eureka.RegisterClient(JsonRegistrationInfo)
+
+  // Starts a go func to listen for signal
+  eureka.handleSigterm()
+
+  // Sending heart beat signals //
+  eureka.HealthCheck()
+
 }
