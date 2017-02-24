@@ -13,7 +13,7 @@ func RegisterClient(registerationInfo []byte){
 
   for resp_code != 204 {
 
-    req, err := http.NewRequest("POST", EUREKA_ENDPOINT, bytes.NewBuffer(jsonStr))
+    req, err := http.NewRequest("POST", EUREKA_ENDPOINT, registerationInfo)
     req.Header.Set("Content-Type", "application/json")
     client := &http.Client{}
     resp, err := client.Do(req)
