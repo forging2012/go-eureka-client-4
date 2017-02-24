@@ -15,10 +15,10 @@ func main() {
   fmt.Println(string(JsonRegistrationInfo))
 
   // Register the client
-  eureka.RegisterClient(JsonRegistrationInfo)
+  //eureka.RegisterClient(JsonRegistrationInfo)
 
   // Starts a go func to listen for signal
-  eureka.handleSigterm()
+  eureka.HandleSigterm()
 
   // Sending heart beat signals //
   eureka.HealthCheck()
