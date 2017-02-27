@@ -8,9 +8,6 @@ import "io/ioutil"
 import "bytes"
 import "os"
 
-var EUREKA_ENDPOINT = os.Getenv("EUREKA_ENDPOINT")
-var APP_NAME = os.Getenv("APP_NAME")
-
 func RegisterClient(registerationInfo []byte){
   // Call Eureka end point and register //
 
