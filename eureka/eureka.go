@@ -3,6 +3,7 @@ package eureka
 import "github.com/ibrokethecloud/go-utils"
 import "encoding/json"
 import "fmt"
+import "os"
 
 // Global variable definitions based on env variable declarations //
 var EUREKA_ENDPOINT = os.Getenv("EUREKA_ENDPOINT")
