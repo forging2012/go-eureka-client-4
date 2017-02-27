@@ -6,7 +6,7 @@ import "time"
 import  log "github.com/Sirupsen/logrus"
 import "io/ioutil"
 import "bytes"
-import "os"
+
 
 func RegisterClient(registerationInfo []byte){
   // Call Eureka end point and register //
