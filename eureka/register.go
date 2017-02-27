@@ -19,7 +19,9 @@ func RegisterClient(registerationInfo []byte){
 
     req, err := http.NewRequest("POST", endpoint, bytes.NewBuffer(registerationInfo))
     req.Header.Set("Content-Type", "application/json")
-    client := &http.Client{}
+    client := &http.Client{
+      Timeout: 10 * time.Second,
+    }
     resp, err := client.Do(req)
 
     utils.CheckError(err)

@@ -13,7 +13,9 @@ func UnregisterClient(){
   endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/v2/apps/"+APP_NAME+"/"+utils.GetHostName()
   req, err := http.NewRequest("DELETE", endpoint, nil)
   req.Header.Set("Content-Type", "application/json")
-  client := &http.Client{}
+  client := &http.Client{
+    Timeout: 10 * time.Second,
+  }
   resp, err := client.Do(req)
 
   utils.CheckError(err)

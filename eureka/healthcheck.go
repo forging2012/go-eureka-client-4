@@ -17,7 +17,9 @@ func HealthCheck(){
     for {
       req, err := http.NewRequest("PUT", endpoint, nil)
       req.Header.Set("Content-Type", "application/json")
-      client := &http.Client{}
+      client := &http.Client{
+        Timeout: 10 * time.Second,
+      }
       resp, err := client.Do(req)
 
       utils.CheckError(err)

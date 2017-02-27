@@ -18,7 +18,7 @@ func ManageEureka() {
   fmt.Println(string(JsonRegistrationInfo))
 
   // Register the client
-  //eureka.RegisterClient(JsonRegistrationInfo)
+  RegisterClient(JsonRegistrationInfo)
 
   // Starts a go func to listen for signal
   HandleSigterm()
