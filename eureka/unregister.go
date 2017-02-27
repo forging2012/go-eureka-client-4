@@ -6,6 +6,7 @@ import  log "github.com/Sirupsen/logrus"
 import "os"
 import "os/signal"
 import "syscall"
+import "time"
 
 func UnregisterClient(){
   // Call Eureka end point and register //
