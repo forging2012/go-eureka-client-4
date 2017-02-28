@@ -8,7 +8,7 @@ import "os"
 // Global variable definitions based on env variable declarations //
 var EUREKA_ENDPOINT = os.Getenv("EUREKA_ENDPOINT")
 var APP_NAME = os.Getenv("APP_NAME")
-
+var PORT = os.Getenv("PORT")
 
 // Wrapper function to manage the eureka registry lifecycle
 func ManageEureka() {

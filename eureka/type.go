@@ -15,8 +15,8 @@ type InstanceInfo struct {
   SecureVipAddress  string  `json:"secureVipAddress"`
   IpAddress string `json:"ipAddr"`
   Status string `json:"status"`
-  Port  string  `json:"port"`
-  SecurePort string `json:"securePort"`
+  Port  PortInfo  `json:"port"`
+  SecurePort SecurePortInfo `json:"securePort"`
   HealthCheckUrl string `json:"healthCheckUrl"`
   StatusPageUrl string  `json:"statusPageUrl"`
   HomePageUrl  string `json:"homePageUrl"`
@@ -28,11 +28,31 @@ type DataCenterInfo struct{
   Name string `json:"name"`
 }
 
+type PortInfo struct{
+  PortNumber string `json:"$"`
+  Status string `json:"@enabled"`
+}
+
+type SecurePortInfo struct{
+  PortNumber string `json:"$"`
+  Status string `json:"@enabled"`
+}
+
 var ContainerIp = utils.GetIP()
 
 var DefaultDataCenterInfo = DataCenterInfo {
   Class: "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
-  Name: "Internal",
+  Name: "MyOwn",
+}
+
+var DefaultPortInfo = PortInfo {
+  PortNumber: PORT,
+  Status: "enabled",
+}
+
+var DefaultSecurePortInfo = SecurePortInfo {
+  PortNumber: "8443",
+  Status: "disabled",
 }
 
 var DefaultInstanceInfo = InstanceInfo {
@@ -41,9 +61,9 @@ var DefaultInstanceInfo = InstanceInfo {
   VipAddress: ContainerIp,
   SecureVipAddress: ContainerIp,
   IpAddress:  ContainerIp,
-  Status: "STARTING",
-  Port: os.Getenv("PORT"),
-  SecurePort: "8443",
+  Status: "UP",
+  Port: DefaultPortInfo,
+  SecurePort: DefaultSecurePortInfo,
   HealthCheckUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/health",
   StatusPageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/status",
   HomePageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/",

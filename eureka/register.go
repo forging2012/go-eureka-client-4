@@ -13,9 +13,11 @@ func RegisterClient(registerationInfo []byte){
 
   resp_code := "000"
 
-  endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/v2/apps/"
+  endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/apps/"+APP_NAME
 
-  for resp_code != "204" {
+  log.Infof("About to hit endpoint %s",endpoint)
+
+  for resp_code != "204 No Content" {
 
     req, err := http.NewRequest("POST", endpoint, bytes.NewBuffer(registerationInfo))
     req.Header.Set("Content-Type", "application/json")

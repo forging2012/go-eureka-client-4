@@ -11,7 +11,7 @@ import "time"
 func UnregisterClient(){
   // Call Eureka end point and register //
 
-  endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/v2/apps/"+APP_NAME+"/"+utils.GetHostName()
+  endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/apps/"+APP_NAME+"/"+utils.GetHostName()
   req, err := http.NewRequest("DELETE", endpoint, nil)
   req.Header.Set("Content-Type", "application/json")
   client := &http.Client{
