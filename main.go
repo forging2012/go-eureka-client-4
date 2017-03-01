@@ -1,7 +1,7 @@
 package main
 
 
-import "./eureka"
+import "github.com/ibrokethecloud/go-eureka-client/eureka"
 import "time"
 import  log "github.com/Sirupsen/logrus"
 import "sync"
