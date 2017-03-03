@@ -69,7 +69,7 @@ var DefaultInstanceInfo = InstanceInfo {
   StatusPageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/status",
   HomePageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/",
   DataCenter: DefaultDataCenterInfo,
-  InstanceId: utils.GetHostName()+":"+string.ToLower(os.Getenv("APP_NAME"))+":"+os.Getenv("PORT")
+  InstanceId: utils.GetHostName()+":"+string.ToLower(os.Getenv("APP_NAME"))+":"+os.Getenv("PORT"),
 }
 
 var DefaultRegisterationInfo = RegisterationInfo {
