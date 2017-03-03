@@ -70,7 +70,7 @@ var DefaultInstanceInfo = InstanceInfo {
   SecurePort: DefaultSecurePortInfo,
   HealthCheckUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/health",
   StatusPageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/status",
-  HomePageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/",
+  HomePageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT"),
   DataCenter: DefaultDataCenterInfo,
   InstanceId: instanceId,
 }
