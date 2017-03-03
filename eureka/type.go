@@ -62,15 +62,15 @@ var DefaultSecurePortInfo = SecurePortInfo {
 var DefaultInstanceInfo = InstanceInfo {
   Hostname: ContainerIp,
   App:  os.Getenv("APP_NAME"),
-  VipAddress: utils.GetHostName(),
-  SecureVipAddress: utils.GetHostName(),
+  VipAddress: strings.ToLower(os.Getenv("APP_NAME")),
+  SecureVipAddress: strings.ToLower(os.Getenv("APP_NAME")),
   IpAddress:  ContainerIp,
   Status: "UP",
   Port: DefaultPortInfo,
   SecurePort: DefaultSecurePortInfo,
   HealthCheckUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/health",
   StatusPageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/status",
-  HomePageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT"),
+  HomePageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/",
   DataCenter: DefaultDataCenterInfo,
   InstanceId: instanceId,
 }
