@@ -47,12 +47,12 @@ var DefaultDataCenterInfo = DataCenterInfo {
 
 var DefaultPortInfo = PortInfo {
   PortNumber: PORT,
-  Status: "enabled",
+  Status: "true",
 }
 
 var DefaultSecurePortInfo = SecurePortInfo {
   PortNumber: "8443",
-  Status: "disabled",
+  Status: "false",
 }
 
 var DefaultInstanceInfo = InstanceInfo {
