@@ -4,7 +4,7 @@ import "github.com/ibrokethecloud/go-utils"
 import "os"
 import "strings"
 
-instanceId := utils.GetHostName()+":"+strings.ToLower(os.Getenv("APP_NAME"))+":"+os.Getenv("PORT")
+var instanceId = utils.GetHostName()+":"+strings.ToLower(os.Getenv("APP_NAME"))+":"+os.Getenv("PORT")
 
 type RegisterationInfo struct {
 
