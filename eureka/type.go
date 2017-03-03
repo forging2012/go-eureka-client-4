@@ -60,10 +60,10 @@ var DefaultSecurePortInfo = SecurePortInfo {
 }
 
 var DefaultInstanceInfo = InstanceInfo {
-  Hostname: utils.GetHostName(),
+  Hostname: ContainerIp,
   App:  os.Getenv("APP_NAME"),
-  VipAddress: ContainerIp,
-  SecureVipAddress: ContainerIp,
+  VipAddress: utils.GetHostName(),
+  SecureVipAddress: utils.GetHostName(),
   IpAddress:  ContainerIp,
   Status: "UP",
   Port: DefaultPortInfo,
