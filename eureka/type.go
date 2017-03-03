@@ -3,6 +3,9 @@ package eureka
 import "github.com/ibrokethecloud/go-utils"
 import "os"
 import "strings"
+
+instanceId := utils.GetHostName()+":"+strings.ToLower(os.Getenv("APP_NAME"))+":"+os.Getenv("PORT")
+
 type RegisterationInfo struct {
 
   Instance InstanceInfo `json:"instance"`
@@ -69,7 +72,7 @@ var DefaultInstanceInfo = InstanceInfo {
   StatusPageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/status",
   HomePageUrl: "http://"+ContainerIp+":"+os.Getenv("PORT")+"/",
   DataCenter: DefaultDataCenterInfo,
-  InstanceId: utils.GetHostName()+":"+strings.ToLower(os.Getenv("APP_NAME"))+":"+os.Getenv("PORT"),
+  InstanceId: instanceId,
 }
 
 var DefaultRegisterationInfo = RegisterationInfo {

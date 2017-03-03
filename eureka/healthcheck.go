@@ -12,7 +12,7 @@ import "io/ioutil"
 func HealthCheck(){
   // Call Eureka end point and register //
 
-    endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/apps/"+APP_NAME+"/"+utils.GetHostName()
+    endpoint := "http://"+EUREKA_ENDPOINT+"/eureka/apps/"+APP_NAME+"/"+instanceId
 
     for {
       req, err := http.NewRequest("PUT", endpoint, nil)
