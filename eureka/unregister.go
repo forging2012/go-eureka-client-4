@@ -22,7 +22,7 @@ func UnregisterClient(){
   utils.CheckError(err)
 
   defer resp.Body.Close()
-  log.Infof("HealtCheck Status: %v", resp.Status)
+  log.Debugf("HealtCheck Status: %v", resp.Status)
 
 
 }

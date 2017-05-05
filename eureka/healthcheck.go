@@ -25,10 +25,10 @@ func HealthCheck(){
       utils.CheckError(err)
 
       defer resp.Body.Close()
-      log.Infof("HealtCheck Status: %v", resp.Status)
+      log.Debugf("HealtCheck Status: %v", resp.Status)
 
       body, _ := ioutil.ReadAll(resp.Body)
-      log.Infof("response Body: %s", string(body))
+      log.Debugf("response Body: %s", string(body))
 
       time.Sleep(time.Second * 30)
     }

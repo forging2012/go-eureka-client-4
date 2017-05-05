@@ -15,7 +15,7 @@ func ManageEureka() {
 
   var JsonRegistrationInfo,err = json.Marshal(DefaultRegisterationInfo)
   utils.CheckError(err)
-  fmt.Println(string(JsonRegistrationInfo))
+  //fmt.Println(string(JsonRegistrationInfo))
 
   // Register the client
   RegisterClient(JsonRegistrationInfo)
