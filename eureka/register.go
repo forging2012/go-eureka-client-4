@@ -29,11 +29,11 @@ func RegisterClient(registerationInfo []byte){
     utils.CheckError(err)
 
     defer resp.Body.Close()
-    log.Infof("response Status: %v", resp.Status)
-    log.Infof("response Headers: %v", resp.Header)
+    log.Debugf("response Status: %v", resp.Status)
+    log.Debugf("response Headers: %v", resp.Header)
 
     body, _ := ioutil.ReadAll(resp.Body)
-    log.Infof("response Body: %s", string(body))
+    log.Debugf("response Body: %s", string(body))
 
     resp_code = resp.Status
 

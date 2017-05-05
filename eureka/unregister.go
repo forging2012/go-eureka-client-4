@@ -38,7 +38,7 @@ func HandleSigterm() {
 
            go func() {                           // Start an anonymous func running in a goroutine
                    <-c                           // that will block until a message is recieved on
-                   log.Info("Received SIGTERM. Shutting down now")
+                   log.Infof("Received SIGTERM. Shutting down now")
                    UnregisterClient()           // the channel. When that happens, perform Eureka
                    os.Exit(1)                    // deregistration and exit program.
            }()
